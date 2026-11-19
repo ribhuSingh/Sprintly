@@ -1,1 +1,11 @@
-/node_modules
+node_modules
+dist
+coverage
+*.log
+.DS_Store
+
+# secrets
+.env
+.env.*
+*.env
+!.env.example
