@@ -91,7 +91,7 @@ function IssueDetail({ issue, projectId, onClose }: { issue: IssueDTO; projectId
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-2 border-b px-6 py-3 pr-12 text-sm text-muted-foreground">
-        <span className="font-medium">{issue.identifier}</span>
+        <span className="font-mono text-xs font-medium">{issue.identifier}</span>
         <span>· Created {timeAgo(issue.createdAt)} by {issue.reporter.name}</span>
         <div className="ml-auto flex gap-1">
           <Button variant="ghost" size="icon" onClick={copyLink} aria-label="Copy link">

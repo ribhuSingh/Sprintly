@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { ISSUE_PRIORITIES, ISSUE_SORT_FIELDS, ISSUE_STATUSES } from './enums';
 
 export const objectId = z.string().regex(/^[a-f\d]{24}$/i, 'Invalid id');
-const hexColor = z.string().regex(/^#[0-9a-f]{6}$/i, 'Use a hex colour like #6366f1');
+const hexColor = z.string().regex(/^#[0-9a-f]{6}$/i, 'Use a hex colour like #c2410c');
 
 // ---------- Auth ----------
 export const registerSchema = z.object({
@@ -54,7 +54,7 @@ export const createProjectSchema = z.object({
     .toUpperCase()
     .regex(/^[A-Z][A-Z0-9]{1,5}$/, '2-6 letters/digits, starting with a letter'),
   description: z.string().trim().max(500).optional().default(''),
-  color: hexColor.optional().default('#6366f1'),
+  color: hexColor.optional().default('#475569'),
   startDate: z.coerce.date().optional().nullable(),
   targetDate: z.coerce.date().optional().nullable(),
 });

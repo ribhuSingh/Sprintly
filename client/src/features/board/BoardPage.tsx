@@ -157,7 +157,7 @@ export default function BoardPage() {
     return (
       <div className="flex gap-4 p-4 sm:p-6" role="status" aria-label="Loading board">
         {ISSUE_STATUSES.map((s) => (
-          <div key={s} className="w-72 shrink-0 space-y-2 rounded-xl bg-muted/50 p-2">
+          <div key={s} className="w-[17.5rem] shrink-0 space-y-1.5 rounded-lg bg-sidebar p-1.5">
             <Skeleton className="h-6 w-24" />
             {Array.from({ length: 3 }, (_, i) => <Skeleton key={i} className="h-20 bg-background" />)}
           </div>

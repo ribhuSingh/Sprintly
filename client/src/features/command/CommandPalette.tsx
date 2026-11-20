@@ -91,7 +91,7 @@ export default function CommandPalette({ open, onOpenChange }: { open: boolean; 
                     className={itemClass}
                   >
                     <StatusIcon status={i.status} />
-                    <span className="w-16 shrink-0 text-xs text-muted-foreground">{i.identifier}</span>
+                    <span className="w-16 shrink-0 font-mono text-xs text-muted-foreground">{i.identifier}</span>
                     <span className="truncate">{i.title}</span>
                   </Command.Item>
                 ))}

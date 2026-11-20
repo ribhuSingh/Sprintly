@@ -19,13 +19,13 @@ export const CardBody = memo(function CardBody({ issue, labels, overlay }: Omit<
   return (
     <div
       className={cn(
-        'space-y-2 rounded-lg border bg-card p-3 text-sm shadow-xs transition-shadow',
-        overlay && 'rotate-2 cursor-grabbing shadow-xl ring-2 ring-primary/40',
+        'space-y-2 rounded-md border bg-card px-3 py-2.5 text-[13px] transition-colors hover:border-input',
+        overlay && 'rotate-1 cursor-grabbing border-input shadow-lg',
       )}
     >
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
         <PriorityIcon priority={issue.priority} className="size-3.5" />
-        <span>{issue.identifier}</span>
+        <span className="font-mono text-[11px]">{issue.identifier}</span>
         <span className="ml-auto">
           <AvatarStack users={issue.assignees} size="xs" max={2} />
         </span>
@@ -77,7 +77,7 @@ export const KanbanCard = memo(function KanbanCard({ issue, labels, onOpen, disa
       aria-roledescription="Draggable issue card"
       aria-label={`${issue.identifier}: ${issue.title}`}
       className={cn(
-        'touch-manipulation rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        'touch-manipulation rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring',
         disabled ? 'cursor-pointer' : 'cursor-grab',
         isDragging && 'opacity-40',
       )}

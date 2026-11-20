@@ -32,12 +32,12 @@ export default function LoginPage() {
 
   return (
     <AuthShell
-      title="Welcome back"
-      subtitle="Log in to your Sprintly workspace"
+      title="Log in"
+      subtitle="Pick up where your team left off."
       footer={
         <>
           New here?{' '}
-          <Link className="font-medium text-primary hover:underline" to="/register">
+          <Link className="font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground" to="/register">
             Create an account
           </Link>
         </>

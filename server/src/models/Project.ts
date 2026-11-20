@@ -11,7 +11,7 @@ const projectSchema = new Schema(
     name: { type: String, required: true, trim: true },
     key: { type: String, required: true, uppercase: true, trim: true },
     description: { type: String, default: '' },
-    color: { type: String, default: '#6366f1' },
+    color: { type: String, default: '#475569' },
     labels: { type: [labelSchema], default: [] },
     startDate: { type: Date, default: null },
     targetDate: { type: Date, default: null },

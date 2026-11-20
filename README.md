@@ -13,7 +13,7 @@ npm run seed                         # demo workspace: 6 users, 3 projects, ~220
 npm run dev                          # API on :4000, web app on :5173
 ```
 
-Open http://localhost:5173 and log in with **demo@sprintly.dev / password123**, or click "Use demo account". To try real-time updates, log in as `ava@sprintly.dev` (same password) in a second browser and open the same board.
+Open http://localhost:5173 and log in with **demo@sprintly.dev / password123**, or click "Use demo account". To try real-time updates, log in as `kabir@sprintly.dev` (same password) in a second browser and open the same board.
 
 | Script | What it does |
 |---|---|

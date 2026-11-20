@@ -63,7 +63,7 @@ export function AppLayout() {
         Skip to content
       </a>
       <div className="flex h-dvh overflow-hidden">
-        <aside className="hidden w-60 shrink-0 border-r bg-sidebar md:block" aria-label="Primary">
+        <aside className="hidden w-56 shrink-0 border-r bg-sidebar md:block" aria-label="Primary">
           <Sidebar />
         </aside>
         <Dialog open={mobileNavOpen} onOpenChange={setMobileNavOpen}>

@@ -19,9 +19,9 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/menu';
 const STATUS_ICON: Record<IssueStatus, { icon: typeof Circle; className: string }> = {
   backlog: { icon: CircleDashed, className: 'text-muted-foreground' },
   todo: { icon: Circle, className: 'text-muted-foreground' },
-  in_progress: { icon: CircleDot, className: 'text-amber-500' },
-  in_review: { icon: CircleEllipsis, className: 'text-violet-500' },
-  done: { icon: CircleCheck, className: 'text-emerald-500' },
+  in_progress: { icon: CircleDot, className: 'text-amber-600 dark:text-amber-400' },
+  in_review: { icon: CircleEllipsis, className: 'text-sky-600 dark:text-sky-400' },
+  done: { icon: CircleCheck, className: 'text-emerald-600 dark:text-emerald-500' },
 };
 
 export function StatusIcon({ status, className }: { status: IssueStatus; className?: string }) {
@@ -33,8 +33,8 @@ const PRIORITY_ICON: Record<IssuePriority, { icon: typeof Circle; className: str
   none: { icon: Minus, className: 'text-muted-foreground' },
   low: { icon: SignalLow, className: 'text-muted-foreground' },
   medium: { icon: SignalMedium, className: 'text-foreground' },
-  high: { icon: SignalHigh, className: 'text-orange-500' },
-  urgent: { icon: AlertOctagon, className: 'text-red-500' },
+  high: { icon: SignalHigh, className: 'text-foreground' },
+  urgent: { icon: AlertOctagon, className: 'text-red-600 dark:text-red-400' },
 };
 
 export function PriorityIcon({ priority, className }: { priority: IssuePriority; className?: string }) {
@@ -44,7 +44,7 @@ export function PriorityIcon({ priority, className }: { priority: IssuePriority;
 
 export function LabelPill({ label }: { label: LabelDTO }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full border px-1.5 py-px text-[11px] text-muted-foreground">
+    <span className="inline-flex items-center gap-1.5 rounded border px-1.5 py-px text-[11px] text-muted-foreground">
       <span className="size-1.5 rounded-full" style={{ backgroundColor: label.color }} aria-hidden />
       {label.name}
     </span>
@@ -58,7 +58,7 @@ export function DueDate({ iso, done, className }: { iso: string | null; done?: b
     <span
       className={cn(
         'inline-flex items-center gap-1 text-xs',
-        state === 'overdue' ? 'text-red-500' : state === 'today' ? 'text-amber-600 dark:text-amber-400' : 'text-muted-foreground',
+        state === 'overdue' ? 'text-red-600 dark:text-red-400' : state === 'today' ? 'text-amber-600 dark:text-amber-400' : 'text-muted-foreground',
         className,
       )}
       title={state === 'overdue' ? 'Overdue' : 'Due date'}

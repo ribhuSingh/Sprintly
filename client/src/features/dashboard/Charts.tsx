@@ -54,7 +54,7 @@ function ChartCard({ title, description, table, children }: { title: string; des
         <button
           onClick={() => setShowTable((s) => !s)}
           aria-pressed={showTable}
-          className="inline-flex items-center gap-1 rounded px-2 py-1 text-xs text-muted-foreground hover:bg-accent hover:text-foreground cursor-pointer"
+          className="-mr-1 inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs text-muted-foreground hover:bg-accent hover:text-foreground cursor-pointer"
         >
           <Table2 className="size-3.5" /> {showTable ? 'Chart' : 'Table'}
         </button>
@@ -90,7 +90,7 @@ function DataTable({ head, rows }: { head: string[]; rows: (string | number)[][]
 function ChartTooltip({ active, payload, label, labelFormatter }: TooltipProps<number, string> & { labelFormatter?: (l: string) => string }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-md border bg-popover px-3 py-2 text-xs shadow-lg">
+    <div className="rounded-md border bg-popover px-2.5 py-2 text-xs shadow-md">
       <p className="mb-1 font-medium">{labelFormatter ? labelFormatter(String(label)) : label}</p>
       {payload.map((p) => (
         <p key={p.dataKey as string} className="flex items-center gap-2 text-muted-foreground">

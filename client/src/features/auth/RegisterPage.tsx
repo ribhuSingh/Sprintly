@@ -31,11 +31,11 @@ export default function RegisterPage() {
   return (
     <AuthShell
       title="Create your account"
-      subtitle="Start organising your team’s work in minutes"
+      subtitle="You can invite the rest of your team once you’re in."
       footer={
         <>
           Already have an account?{' '}
-          <Link className="font-medium text-primary hover:underline" to="/login">
+          <Link className="font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground" to="/login">
             Log in
           </Link>
         </>

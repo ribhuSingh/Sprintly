@@ -25,16 +25,16 @@ export const KanbanColumn = memo(function KanbanColumn({ status, ids, issuesById
     <section
       aria-labelledby={headingId}
       className={cn(
-        'flex w-72 shrink-0 flex-col rounded-xl bg-muted/50 transition-colors',
-        isOver && 'bg-primary/5 ring-1 ring-primary/30',
+        'flex w-[17.5rem] shrink-0 flex-col rounded-lg bg-sidebar transition-colors',
+        isOver && 'bg-accent ring-1 ring-border',
       )}
     >
-      <header className="flex items-center gap-2 px-3 py-2.5">
+      <header className="flex h-10 items-center gap-2 px-3">
         <StatusIcon status={status} />
-        <h2 id={headingId} className="text-sm font-medium">
+        <h2 id={headingId} className="text-[13px] font-medium">
           {STATUS_LABELS[status]}
         </h2>
-        <span className="text-xs text-muted-foreground">{ids.length}</span>
+        <span className="font-mono text-xs tabular-nums text-muted-foreground">{ids.length}</span>
         {onCreate && !readOnly && (
           <button
             onClick={() => onCreate(status)}
@@ -46,7 +46,7 @@ export const KanbanColumn = memo(function KanbanColumn({ status, ids, issuesById
         )}
       </header>
       <SortableContext id={status} items={ids} strategy={verticalListSortingStrategy}>
-        <div ref={setNodeRef} role="list" className="flex min-h-24 flex-1 flex-col gap-2 overflow-y-auto px-2 pb-3">
+        <div ref={setNodeRef} role="list" className="flex min-h-24 flex-1 flex-col gap-1.5 overflow-y-auto px-1.5 pb-2">
           {ids.map((id) => {
             const issue = issuesById.get(id);
             return issue ? (
@@ -56,7 +56,7 @@ export const KanbanColumn = memo(function KanbanColumn({ status, ids, issuesById
             ) : null;
           })}
           {ids.length === 0 && (
-            <p className="rounded-lg border border-dashed p-4 text-center text-xs text-muted-foreground">
+            <p className="rounded-md border border-dashed p-4 text-center text-xs text-muted-foreground">
               {readOnly ? 'No issues' : 'Drop issues here'}
             </p>
           )}

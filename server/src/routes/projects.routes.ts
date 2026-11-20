@@ -54,9 +54,9 @@ projectsRouter.post('/', async (req, res) => {
     team: teamId,
     createdBy: me,
     labels: [
-      { name: 'Bug', color: '#ef4444' },
-      { name: 'Feature', color: '#6366f1' },
-      { name: 'Improvement', color: '#14b8a6' },
+      { name: 'Bug', color: '#dc2626' },
+      { name: 'Feature', color: '#1d4ed8' },
+      { name: 'Improvement', color: '#0f766e' },
     ],
   });
   void recordActivity({ actor: me, verb: 'project.created', project });

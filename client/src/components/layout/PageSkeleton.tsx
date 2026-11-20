@@ -19,8 +19,8 @@ export function FullScreenLoader() {
   return (
     <div className="flex h-dvh items-center justify-center" role="status" aria-label="Loading Sprintly">
       <div className="flex items-center gap-3 text-muted-foreground">
-        <span className="size-3 animate-ping rounded-full bg-primary" />
-        Loading Sprintly…
+        <span className="size-2 animate-pulse rounded-full bg-brand" />
+        Loading…
       </div>
     </div>
   );

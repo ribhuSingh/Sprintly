@@ -3,16 +3,16 @@ import type { UserDTO } from '@sprintly/shared';
 import { cn, initials } from '@/lib/utils';
 
 export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('rounded-xl border bg-card text-card-foreground shadow-xs', className)} {...props} />;
+  return <div className={cn('rounded-lg border bg-card text-card-foreground', className)} {...props} />;
 }
 export function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('flex flex-col gap-1 p-5 pb-3', className)} {...props} />;
+  return <div className={cn('flex flex-col gap-1 px-4 pt-3.5 pb-2.5', className)} {...props} />;
 }
 export function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h3 className={cn('text-sm font-semibold', className)} {...props} />;
+  return <h3 className={cn('text-[13px] font-semibold', className)} {...props} />;
 }
 export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('p-5 pt-0', className)} {...props} />;
+  return <div className={cn('px-4 pb-4 pt-0', className)} {...props} />;
 }
 
 export function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
@@ -23,7 +23,7 @@ export function Badge({ className, color, ...props }: React.HTMLAttributes<HTMLS
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium whitespace-nowrap',
+        'inline-flex items-center gap-1 rounded border px-1.5 py-px text-xs font-medium whitespace-nowrap',
         className,
       )}
       style={color ? { borderColor: `${color}55`, backgroundColor: `${color}18` } : undefined}
@@ -52,7 +52,7 @@ export function Avatar({ user, size = 'sm', className }: { user: Pick<UserDTO, '
       role="img"
       aria-label={user.name}
       title={user.name}
-      className={cn('inline-flex shrink-0 items-center justify-center rounded-full font-semibold text-white ring-2 ring-background', sizes[size], className)}
+      className={cn('inline-flex shrink-0 items-center justify-center rounded-full font-medium text-white ring-2 ring-background', sizes[size], className)}
       style={{ backgroundColor: user.avatarColor }}
     >
       {initials(user.name)}
@@ -91,13 +91,11 @@ export function EmptyState({
   className?: string;
 }) {
   return (
-    <div className={cn('flex flex-col items-center justify-center gap-3 rounded-xl border border-dashed p-10 text-center', className)}>
-      <div className="flex size-12 items-center justify-center rounded-full bg-muted">
-        <Icon className="size-6 text-muted-foreground" />
-      </div>
+    <div className={cn('flex flex-col items-start justify-center gap-3 rounded-lg border border-dashed px-6 py-8', className)}>
+      <Icon className="size-5 text-muted-foreground" aria-hidden />
       <div className="space-y-1">
-        <p className="font-medium">{title}</p>
-        {description && <p className="mx-auto max-w-sm text-sm text-muted-foreground">{description}</p>}
+        <p className="text-sm font-medium">{title}</p>
+        {description && <p className="max-w-md text-sm text-muted-foreground">{description}</p>}
       </div>
       {action}
     </div>
@@ -106,11 +104,11 @@ export function EmptyState({
 
 export function PageHeader({ title, description, actions, children }: { title: React.ReactNode; description?: React.ReactNode; actions?: React.ReactNode; children?: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-3 border-b px-4 py-4 sm:px-6">
+    <div className="flex flex-col gap-3 border-b px-4 py-3.5 sm:px-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <h1 className="truncate text-xl font-semibold tracking-tight">{title}</h1>
-          {description && <p className="text-sm text-muted-foreground">{description}</p>}
+          <h1 className="truncate text-lg font-semibold tracking-tight">{title}</h1>
+          {description && <p className="mt-0.5 text-[13px] text-muted-foreground">{description}</p>}
         </div>
         {actions && <div className="flex items-center gap-2">{actions}</div>}
       </div>

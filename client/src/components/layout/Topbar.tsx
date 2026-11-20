@@ -25,18 +25,18 @@ export function Topbar({ onOpenMobileNav }: { onOpenMobileNav: () => void }) {
   const { theme, toggle } = useTheme();
 
   return (
-    <header className="flex h-14 shrink-0 items-center gap-2 border-b px-3 sm:px-4">
+    <header className="flex h-12 shrink-0 items-center gap-2 border-b px-3 sm:px-4">
       <Button variant="ghost" size="icon" className="md:hidden" onClick={onOpenMobileNav} aria-label="Open navigation">
         <Menu />
       </Button>
 
       <button
         onClick={ui.openCommandPalette}
-        className="flex h-9 w-full max-w-md items-center gap-2 rounded-md border bg-muted/40 px-3 text-sm text-muted-foreground transition-colors hover:bg-muted cursor-pointer"
+        className="flex h-8 w-full max-w-sm items-center gap-2 rounded-md border bg-card px-2.5 text-[13px] text-muted-foreground transition-colors hover:border-input hover:text-foreground cursor-pointer"
         aria-label="Open command palette"
       >
-        <Search className="size-4" aria-hidden />
-        <span className="flex-1 text-left">Search or jump to…</span>
+        <Search className="size-3.5" aria-hidden />
+        <span className="flex-1 text-left">Search issues, projects, commands</span>
         <span className="hidden gap-1 sm:flex" aria-hidden>
           <Kbd>{modKey}</Kbd>
           <Kbd>K</Kbd>
@@ -61,7 +61,7 @@ export function Topbar({ onOpenMobileNav }: { onOpenMobileNav: () => void }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button className="ml-1 rounded-full cursor-pointer" aria-label="Account menu">
-              <Avatar user={user} size="md" />
+              <Avatar user={user} size="sm" />
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">

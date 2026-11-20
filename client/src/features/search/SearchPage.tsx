@@ -124,13 +124,13 @@ export default function SearchPage() {
               <h2 className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
                 Issues · {issues.length}{data.issues.length === 50 ? '+' : ''}
               </h2>
-              <ul className="divide-y rounded-xl border">
+              <ul className="divide-y rounded-lg border bg-card">
                 {issues.map((i) => (
                   <li key={i.id}>
                     <Link to={`/projects/${i.project}/board?issue=${i.id}`} className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-muted/40">
                       <StatusIcon status={i.status} />
                       <PriorityIcon priority={i.priority} />
-                      <span className="w-16 shrink-0 text-xs text-muted-foreground">{i.identifier}</span>
+                      <span className="w-16 shrink-0 font-mono text-xs text-muted-foreground">{i.identifier}</span>
                       <span className="min-w-0 flex-1 truncate font-medium"><Highlight text={i.title} q={q} /></span>
                       <span className="hidden items-center gap-1.5 text-xs text-muted-foreground md:flex">
                         <span className="size-2 rounded-sm" style={{ backgroundColor: i.projectColor }} /> {i.projectName}

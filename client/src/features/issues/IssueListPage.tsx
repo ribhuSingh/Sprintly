@@ -131,7 +131,7 @@ export default function IssueListPage() {
       {
         id: 'number',
         header: 'ID',
-        cell: ({ row }) => <span className="text-muted-foreground">{row.original.identifier}</span>,
+        cell: ({ row }) => <span className="font-mono text-xs text-muted-foreground">{row.original.identifier}</span>,
       },
       {
         id: 'title',
@@ -323,9 +323,9 @@ export default function IssueListPage() {
       )}
 
       {/* ---- Table ---- */}
-      <div className="overflow-x-auto rounded-xl border">
+      <div className="overflow-x-auto rounded-lg border bg-card">
         <table className="w-full text-sm" aria-busy={isFetching} aria-rowcount={data?.total}>
-          <thead className="bg-muted/50">
+          <thead className="bg-sidebar">
             {table.getHeaderGroups().map((hg) => (
               <tr key={hg.id}>
                 {hg.headers.map((h) => {
@@ -335,7 +335,7 @@ export default function IssueListPage() {
                       key={h.id}
                       scope="col"
                       aria-sort={sorted === 'asc' ? 'ascending' : sorted === 'desc' ? 'descending' : undefined}
-                      className={cn('h-10 px-3 text-left font-medium text-muted-foreground', h.column.id === 'select' && 'w-10')}
+                      className={cn('h-9 px-3 text-left text-xs font-medium text-muted-foreground', h.column.id === 'select' && 'w-10')}
                     >
                       {h.column.getCanSort() ? (
                         <button className="inline-flex items-center gap-1 hover:text-foreground cursor-pointer" onClick={h.column.getToggleSortingHandler()}>

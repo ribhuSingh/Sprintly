@@ -150,7 +150,7 @@ function TeamsSettings() {
   return (
     <div className="space-y-6">
       {welcome && (
-        <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 text-sm">
+        <div className="rounded-lg border bg-sidebar p-4 text-sm">
           <p className="font-medium">Welcome to Sprintly! 👋</p>
           <p className="text-muted-foreground">Start by creating a team. You’ll be its owner and can invite teammates and create projects.</p>
         </div>
@@ -335,7 +335,7 @@ function TeamDetailInner({ team }: { team: TeamDTO }) {
 
           {isAdmin ? (
             <form noValidate onSubmit={onInvite} className="flex flex-wrap items-start gap-2">
-              <Field label="Add by email" error={inviteForm.formState.errors.email?.message} className="min-w-56 flex-1" hint="They need a Sprintly account (try ava@sprintly.dev)">
+              <Field label="Add by email" error={inviteForm.formState.errors.email?.message} className="min-w-56 flex-1" hint="They need a Sprintly account (try kabir@sprintly.dev)">
                 {(p) => <Input {...p} type="email" placeholder="teammate@company.com" {...inviteForm.register('email')} />}
               </Field>
               <Field label="Role">

@@ -14,7 +14,7 @@ import { ApiError } from '@/lib/api';
 import { cn } from '@/lib/utils';
 import { useCreateProject, useTeams } from './hooks';
 
-export const PROJECT_COLORS = ['#6366f1', '#ec4899', '#14b8a6', '#f59e0b', '#8b5cf6', '#ef4444', '#0ea5e9', '#22c55e'];
+export const PROJECT_COLORS = ['#c2410c', '#0f766e', '#1d4ed8', '#a16207', '#be123c', '#4d7c0f', '#475569', '#7e22ce'];
 
 const formSchema = z.object({
   teamId: z.string().min(1, 'Choose a team'),

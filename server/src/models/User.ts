@@ -1,6 +1,6 @@
 import { Schema, model, type InferSchemaType, type HydratedDocument } from 'mongoose';
 
-const AVATAR_COLORS = ['#6366f1', '#ec4899', '#14b8a6', '#f59e0b', '#8b5cf6', '#ef4444', '#0ea5e9', '#22c55e'];
+const AVATAR_COLORS = ['#c2410c', '#0f766e', '#1d4ed8', '#a16207', '#be123c', '#4d7c0f', '#475569', '#7e22ce'];
 
 const userSchema = new Schema(
   {

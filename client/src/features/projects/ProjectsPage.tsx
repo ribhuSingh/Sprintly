@@ -18,7 +18,7 @@ export default function ProjectsPage() {
     <>
       <PageHeader
         title="Projects"
-        description="All projects across your teams"
+        description={projects ? `${projects.length} active across your teams` : undefined}
         actions={<Button size="sm" onClick={ui.openCreateProject}><Plus /> New project</Button>}
       />
       <div className="p-4 sm:p-6">
@@ -41,18 +41,18 @@ export default function ProjectsPage() {
               const daysLeft = p.targetDate ? differenceInCalendarDays(parseISO(p.targetDate), new Date()) : null;
               return (
                 <li key={p.id}>
-                  <Card className="h-full transition-shadow focus-within:ring-2 focus-within:ring-ring hover:shadow-md">
-                    <Link to={`/projects/${p.id}/board`} className="flex h-full flex-col gap-3 p-5 outline-none">
+                  <Card className="h-full transition-colors focus-within:ring-2 focus-within:ring-ring hover:border-input">
+                    <Link to={`/projects/${p.id}/board`} className="flex h-full flex-col gap-2.5 p-4 outline-none">
                       <div className="flex items-center gap-2">
-                        <span className="size-3 rounded" style={{ backgroundColor: p.color }} aria-hidden />
-                        <h2 className="font-semibold">{p.name}</h2>
-                        <span className="ml-auto rounded border px-1.5 text-xs text-muted-foreground">{p.key}</span>
+                        <span className="size-2.5 rounded-[3px]" style={{ backgroundColor: p.color }} aria-hidden />
+                        <h2 className="text-sm font-semibold">{p.name}</h2>
+                        <span className="ml-auto font-mono text-xs text-muted-foreground">{p.key}</span>
                       </div>
                       <p className="line-clamp-2 flex-1 text-sm text-muted-foreground">{p.description || 'No description'}</p>
-                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <div className="flex items-center justify-between border-t pt-2.5 text-xs text-muted-foreground">
                         <span>{teamName(p.team)} · {p.issueCount} issues</span>
                         {p.targetDate && (
-                          <span title={`Target ${fullDate(p.targetDate)}`} className={daysLeft !== null && daysLeft < 0 ? 'text-red-500' : ''}>
+                          <span title={`Target ${fullDate(p.targetDate)}`} className={daysLeft !== null && daysLeft < 0 ? 'text-red-600 dark:text-red-400' : ''}>
                             {daysLeft! >= 0 ? `${daysLeft}d left` : `${-daysLeft!}d overdue`}
                           </span>
                         )}

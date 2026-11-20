@@ -35,16 +35,16 @@ export default function ProjectLayout() {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex flex-col gap-3 border-b px-4 pt-4 sm:px-6">
+      <div className="flex flex-col gap-2.5 border-b px-4 pt-3.5 sm:px-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3">
             {isPending || !project ? (
               <Skeleton className="h-7 w-48" />
             ) : (
               <>
-                <span className="size-3 shrink-0 rounded" style={{ backgroundColor: project.color }} aria-hidden />
-                <h1 className="truncate text-xl font-semibold tracking-tight">{project.name}</h1>
-                <span className="rounded border px-1.5 text-xs text-muted-foreground">{project.key}</span>
+                <span className="size-2.5 shrink-0 rounded-[3px]" style={{ backgroundColor: project.color }} aria-hidden />
+                <h1 className="truncate text-lg font-semibold tracking-tight">{project.name}</h1>
+                <span className="font-mono text-xs text-muted-foreground">{project.key}</span>
               </>
             )}
           </div>
@@ -70,12 +70,12 @@ export default function ProjectLayout() {
               to={to}
               className={({ isActive }) =>
                 cn(
-                  'flex items-center gap-1.5 border-b-2 px-1 pb-2.5 text-sm transition-colors',
-                  isActive ? 'border-primary font-medium text-foreground' : 'border-transparent text-muted-foreground hover:text-foreground',
+                  'flex items-center gap-1.5 border-b-2 px-0.5 pb-2 text-[13px] transition-colors',
+                  isActive ? 'border-brand font-medium text-foreground' : 'border-transparent text-muted-foreground hover:text-foreground',
                 )
               }
             >
-              <Icon className="size-4" aria-hidden /> {label}
+              <Icon className="size-3.5" aria-hidden /> {label}
             </NavLink>
           ))}
         </nav>

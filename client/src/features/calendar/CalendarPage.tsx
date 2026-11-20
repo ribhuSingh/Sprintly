@@ -187,7 +187,7 @@ function DayCell({
       )}
     >
       <div className="flex items-center justify-between px-1">
-        <span className={cn('flex size-6 items-center justify-center rounded-full text-xs', isToday(day) && 'bg-primary font-semibold text-primary-foreground')}>
+        <span className={cn('flex size-6 items-center justify-center rounded-full text-xs', isToday(day) && 'bg-brand font-semibold text-white')}>
           {format(day, 'd')}
         </span>
       </div>
